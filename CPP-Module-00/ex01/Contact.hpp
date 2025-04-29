@@ -13,14 +13,31 @@
 
 #ifndef Contact_HPP
 # define Contact_HPP
+#include <string>
+#include <iostream>
+#include <iomanip>
 
 class Contact {
+
     private:
         std::string firstName;
         std::string lastName;
         std::string nickName;
-        std::string phoneNumber;
         std::string darkestScret;
-}
+        unsigned int phoneNumber;
+
+    public:
+        void setFirstName();
+        void setLastName();
+        void setNickName();
+        void setDarkestScret();
+        void setPhoneNumber();
+
+        const std::string getFirstName();
+        const std::string getLastName();
+        const std::string getNickName();
+        const std::string getDarkestScret();
+        unsigned int getPhoneNumber();
+};
 
 #endif

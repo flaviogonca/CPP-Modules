@@ -13,10 +13,27 @@
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define YELLOW "\033[93m"
+#define ORANGE "\033[38;5;208;1m"
+#define RESET "\033[0m"
+
+#include "Contact.hpp"
+
 class PhoneBook {
 
     private:
-        
+        Contact contact[8];
+        short   index;
+
+    public:
+        PhoneBook();
+        void    showHeader();
+        void    showOption();
+        void    addContactInfo();
+        void    searchContactInfo();
 
 };
 
