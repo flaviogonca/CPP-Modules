@@ -13,14 +13,15 @@
 #include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook() {
-    index = 0;
+    counter = 0;
+    curIndex = 0;
 }
 
 void    PhoneBook::showOption() {
-    std::cout << YELLOW << "-->  ADD   " << "➕" << std::endl;
-    std::cout << "--> SEARCH " << "⚫" << std::endl;
-    std::cout << "-->  EXIT  " << "❌" << std::endl;
-	std::cout << "Enter One Of the Options Above: ";
+    std::cout << GREEN << "-->  ADD   " << "➕" << std::endl;
+    std::cout << RESET << "--> SEARCH " << "⚫" << std::endl;
+    std::cout << RED << "-->  EXIT  " << "❌" << std::endl;
+	std::cout << YELLOW << "Enter One Of the Options Above: " << RESET;
 }
 
 void    PhoneBook::showHeader(void) {
@@ -32,35 +33,61 @@ void    PhoneBook::showHeader(void) {
 
 void    PhoneBook::addContactInfo() {
 
-    contact[index].setFirstName();
-    contact[index].setLastName();
-    contact[index].setNickName();
-    contact[index].setDarkestScret();
-    contact[index].setPhoneNumber();
-    index++;
-    if (index == 8)
-        index = 0;
+    if (counter == 8 && curIndex == 8)
+        curIndex = 0;
+    else if (counter < 8)
+        counter++;
+    contact[curIndex].setFirstName();
+    contact[curIndex].setLastName();
+    contact[curIndex].setNickName();
+    contact[curIndex].setDarkestScret();
+    contact[curIndex].setPhoneNumber();
+    curIndex++;
 }
 
-void    PhoneBook::searchContactInfo() {
+void    PhoneBook::getContactByIndex(short index) {
+    if (counter < 1 && index > counter && index < counter)
+    {
+        std::cout << RED << "Invalid Index " << RESET << std::endl;
+        return ;
+    }
+    std::cout << contact[index].getFirstName() << std::endl;
+    std::cout << contact[index].getLastName() << std::endl;
+    std::cout << contact[index].getNickName() << std::endl;
+    std::cout << contact[index].getDarkestScret() << std::endl;
+    std::cout << contact[index].getPhoneNumber() << std::endl;
+}
+
+std::string truncate(std::string str) {
+
+    if (str.length() > 10)
+        return (str.substr(0, 9) + ".");
+    return str;
+}
+
+void    PhoneBook::displayContactList() {
     int i = 0;
+    short id;
     
-    std::cout << std::setw(44) << "============================================" << std::endl;
+    std::cout << "contador" << counter << std::endl;
+    std::cout << std::setw(45) << "=============================================" << std::endl;
     std::cout << "|" << std::setw(10) << std::right << "Index";
     std::cout << "|" << std::setw(10) << std::right << "First Name";
     std::cout << "|" << std::setw(10) << std::right << "Last Name";
     std::cout << "|" << std::setw(10) << std::right << "Nick Name";
     std::cout << "|" << std::endl;
-    std::cout << std::setw(44) << "============================================" << std::endl;
-    while (i < index)
+    std::cout << std::setw(45) << "=============================================" << std::endl;
+    while (i < counter)
     {
-        std::cout << "|" << std::setw(10) << std::right << i + 1;
-        std::cout << "|" << std::setw(10) << std::right << contact[i].getFirstName();
-        std::cout << "|" << std::setw(10) << std::right << contact[i].getLastName();
-        std::cout << "|" << std::setw(10) << std::right << contact[i].getNickName();
+        std::cout << "|" << std::setw(10) << std::right << i;
+        std::cout << "|" << std::setw(10) << std::right << truncate(contact[i].getFirstName());
+        std::cout << "|" << std::setw(10) << std::right << truncate(contact[i].getLastName());
+        std::cout << "|" << std::setw(10) << std::right << truncate(contact[i].getNickName());
         std::cout << "|" << std::endl;
-        std::cout << std::setw(44) << "============================================" << std::endl;
+        std::cout << std::setw(45) << "=============================================" << std::endl;
         i++;
     }
+    std::cin >> id;
+    phoneBook.getContactByIndex(id);
 }
 

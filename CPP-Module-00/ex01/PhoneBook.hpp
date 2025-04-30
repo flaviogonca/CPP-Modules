@@ -26,7 +26,8 @@ class PhoneBook {
 
     private:
         Contact contact[8];
-        short   index;
+        short   counter;
+        short   curIndex;
 
     public:
         PhoneBook();
@@ -34,6 +35,8 @@ class PhoneBook {
         void    showOption();
         void    addContactInfo();
         void    searchContactInfo();
+        void    displayContactList();
+        void    getContactByIndex(short index);
 
 };
 

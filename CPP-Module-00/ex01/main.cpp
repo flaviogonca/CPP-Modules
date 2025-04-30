@@ -28,7 +28,9 @@ int main(void)
 		else if (option == "ADD")
 			phoneBook.addContactInfo();
 		else if (option == "SEARCH")
-			phoneBook.searchContactInfo();
+		{
+			phoneBook.displayContactList();
+		}
 		else
 			std::cout << RED << "Inválid Option Try Again" << RESET << std::endl;
 	}
