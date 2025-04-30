@@ -30,6 +30,7 @@ int main(void)
 		else if (option == "SEARCH")
 		{
 			phoneBook.displayContactList();
+    		phoneBook.getContactByIndex();
 		}
 		else
 			std::cout << RED << "Inválid Option Try Again" << RESET << std::endl;
