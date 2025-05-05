@@ -13,43 +13,46 @@
 #include "Contact.hpp"
 
 void    Contact::setFirstName() {
-    std::string value;
-
 	std::cout << "Enter Your First Name: ";
-    std::cin >> value;
-    firstName = value;
+    std::getline(std::cin, firstName);
 }
 
 void    Contact::setLastName() {
-    std::string value;
-
 	std::cout << "Enter Your last Name: ";
-    std::cin >> value;
-    lastName = value;
+    std::getline(std::cin, lastName);
 }
 
 void    Contact::setNickName() {
-    std::string value;
-
 	std::cout << "Enter Your Nick Name: ";
-    std::cin >> value;
-    nickName = value;
+    std::getline(std::cin, nickName);
 }
 
 void    Contact::setDarkestScret() {
-    std::string value;
-
 	std::cout << "Enter Your Darkest Scret: ";
-    std::cin >> value;
-    darkestScret = value;
+    std::getline(std::cin, darkestScret);
 }
 
 void    Contact::setPhoneNumber() {
-    unsigned int  value;
+    std::string value;
+    int i;
 
-	std::cout << "Enter Your Phone Number: ";
-    std::cin >> value;
-    phoneNumber = value;
+    do
+    {
+        i = -1;
+	    std::cout << "Enter Your Phone Number: ";
+        std::getline(std::cin, value);
+        while (value[++i])
+        {
+            if (!std::isdigit(value[i]) && value[i] != '\0')
+            {
+        	    std::cout << RED << "!! Invalid Phone Number !!" << RESET << std::endl;
+                break;
+            }
+            if (value[i + 1] == '\0')
+                phoneNumber = value;
+        }
+    }
+    while (phoneNumber.empty());
 }
 
 const   std::string Contact::getFirstName() {
@@ -69,6 +72,6 @@ const   std::string Contact::getDarkestScret() {
     return darkestScret;
 }
 
-unsigned    int Contact::getPhoneNumber() {
+const   std::string Contact::getPhoneNumber() {
     return phoneNumber;
 }

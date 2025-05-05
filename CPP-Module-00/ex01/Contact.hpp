@@ -16,6 +16,14 @@
 #include <string>
 #include <iostream>
 #include <iomanip>
+#include <cstdlib>
+
+#define RED "\033[31m"
+#define GREEN "\033[32m"
+#define BLUE "\033[34m"
+#define YELLOW "\033[93m"
+#define ORANGE "\033[38;5;208;1m"
+#define RESET "\033[0m"
 
 class Contact {
 
@@ -24,7 +32,7 @@ class Contact {
         std::string lastName;
         std::string nickName;
         std::string darkestScret;
-        unsigned int phoneNumber;
+        std::string phoneNumber;
 
     public:
         void setFirstName();
@@ -37,7 +45,7 @@ class Contact {
         const std::string getLastName();
         const std::string getNickName();
         const std::string getDarkestScret();
-        unsigned int getPhoneNumber();
+        const std::string getPhoneNumber();
 };
 
 #endif

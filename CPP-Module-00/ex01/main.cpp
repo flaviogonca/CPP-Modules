@@ -22,7 +22,7 @@ int main(void)
 	while (true)
 	{
 		phoneBook.showOption();
-		std::cin >> option;
+		std::getline(std::cin, option);
 		if (option == "EXIT")
 			break ;
 		else if (option == "ADD")

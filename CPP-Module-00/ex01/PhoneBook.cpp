@@ -37,9 +37,9 @@ void PhoneBook::showHeader(void)
 void PhoneBook::addContactInfo()
 {
 
-    if (counter == 3 && curIndex == 3)
+    if (counter == 8 && curIndex == 8)
         curIndex = 0;
-    else if (counter < 3)
+    else if (counter < 8)
         counter++;
     contact[curIndex].setFirstName();
     contact[curIndex].setLastName();
@@ -52,11 +52,13 @@ void PhoneBook::addContactInfo()
 void PhoneBook::getContactByIndex()
 {
     int index;
+    std::string i;
 
     if (counter < 1)
         return;
     std::cout << YELLOW << "Enter the index to see more details of contact: " << RESET << std::endl;
-    std::cin >> index;
+    std::getline(std::cin, i);
+    index = std::atoi(i.c_str());
     if ((index + 1) > counter || (index + 1) < counter)
         std::cout << RED << "Invalid Index" << RESET << std::endl;
     else
