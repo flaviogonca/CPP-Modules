@@ -59,7 +59,9 @@ void PhoneBook::getContactByIndex()
     std::cout << YELLOW << "Enter the index to see more details of contact: " << RESET << std::endl;
     std::getline(std::cin, i);
     index = std::atoi(i.c_str());
-    if ((index + 1) > counter || (index + 1) < counter)
+    std::cout << ORANGE << "Index: " << RESET << index << std::endl;
+    std::cout << ORANGE << "counter: " << RESET << counter << std::endl;
+    if ((index + 1) > counter || index  < 0)
         std::cout << RED << "Invalid Index" << RESET << std::endl;
     else
     {

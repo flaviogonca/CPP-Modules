@@ -52,7 +52,7 @@ void    Contact::setPhoneNumber() {
                 phoneNumber = value;
         }
     }
-    while (phoneNumber.empty());
+    while (phoneNumber != value || !value[0]);
 }
 
 const   std::string Contact::getFirstName() {

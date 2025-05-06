@@ -18,7 +18,7 @@
 class PhoneBook {
 
     private:
-        Contact contact[4];
+        Contact contact[8];
         short   counter;
         short   curIndex;
 
