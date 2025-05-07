@@ -5,18 +5,18 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fmalungo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/04/21 16:41:50 by fmalungo          #+#    #+#              #
-#    Updated: 2025/04/28 15:18:22 by fmalungo         ###   ########.fr        #
+#    Created: 2025/05/07 08:48:49 by fmalungo          #+#    #+#              #
+#    Updated: 2025/05/07 08:48:52 by fmalungo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = phonebook
+NAME = bamk
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CFLAGS = -Wall -Wextra -Werror
 
-SRC = ./main.cpp ./Contact.cpp ./PhoneBook.cpp
+SRC = ./tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
