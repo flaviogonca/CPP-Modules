@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = bamk
+NAME = GlobalBanksters
 
 CC = c++
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = ./tests.cpp
+SRC = ./tests.cpp  Account.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
