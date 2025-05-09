@@ -14,6 +14,10 @@
 # define ZOMBIE_HPP
 
 #include <iostream>
+#include <memory>
+
+#define RED "\033[31m"
+#define RESET "\033[0m"
 
 class Zombie
 {

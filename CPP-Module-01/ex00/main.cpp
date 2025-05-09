@@ -12,9 +12,18 @@
 
 #include "Zombie.hpp"
 
-int main(void)
+int main(int ac, char *av[])
 {
-    Zombie z("FOO");
-    z.announce();
+    if (ac != 2)
+    {
+        std::cout << "Try: ./App   Zombie_name" << std::endl;
+        return 1;
+    }
+
+    Zombie* zombie = new Zombie(av[1]);
+    zombie->announce();
+    zombie->randomChump("Mee");
+
+    delete zombie;
     return (0);
 }
