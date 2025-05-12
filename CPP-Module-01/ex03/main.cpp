@@ -20,7 +20,6 @@ int main()
         HumanA bob("Bob", club);
         bob.attack();
         club.setType("some other type of club");
-        std::cout << "after: " << club.getType() << std::endl;
         bob.attack();
     }
     {

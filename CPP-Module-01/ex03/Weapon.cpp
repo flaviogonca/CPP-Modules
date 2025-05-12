@@ -17,14 +17,6 @@ Weapon::Weapon(std::string weapon)
     this->type = weapon;
 }
 
-Weapon::Weapon()
-{
-}
-
-Weapon::~Weapon()
-{
-}
-
 const std::string& Weapon::getType()
 {
     return type;
@@ -33,5 +25,4 @@ const std::string& Weapon::getType()
 void Weapon::setType(std::string type)
 {
     this->type = type;
-    std::cout << "TESTANDO " << type << " = " << this->type << "\n";
 }

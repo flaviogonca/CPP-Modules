@@ -17,17 +17,13 @@ HumanB::HumanB(std::string name)
     this->name = name;
 }
 
-HumanB::~HumanB()
-{
-}
-
 void HumanB::attack()
 {
-    std::cout << this->name << " attacks with their " << this->_weapon.getType() << std::endl;
+    std::cout << this->name << " attacks with their " << this->_weapon->getType() << std::endl;
 }
 
-void HumanB::setWeapon(Weapon _weapon)
+void HumanB::setWeapon(Weapon &_weapon)
 {
-    this->_weapon = _weapon;
+    this->_weapon = &_weapon;
 }
 

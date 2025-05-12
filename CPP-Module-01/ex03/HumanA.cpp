@@ -12,16 +12,7 @@
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(std::string name, Weapon _weapon)
-{
-    this->name = name;
-    this->_weapon = _weapon;
-}
-
-HumanA::~HumanA()
-{
-}
-
+HumanA::HumanA(std::string name, Weapon &weapon) : name(name),_weapon(weapon) {}
 
 void HumanA::attack()
 {
