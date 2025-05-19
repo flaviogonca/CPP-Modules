@@ -24,18 +24,9 @@ class Harl
         void error( void );
 
     public:
-        Harl(/* args */);
+        Harl();
         ~Harl();
         void complain( std::string level );
 };
-
-Harl::Harl(/* args */)
-{
-}
-
-Harl::~Harl()
-{
-}
-
 
 #endif
