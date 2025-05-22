@@ -10,18 +10,18 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = executable
+NAME =  a.out
 
-CC = c++
+CC = c++ -g
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC = ./main.cpp ./Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 %.o: %.cpp
-	$(CC) $(CFLAGS) -C $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 $(NAME): $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
