@@ -12,7 +12,7 @@
 
 NAME =  a.out
 
-CC = c++ -g
+CXX = c++
 
 CFLAGS = -Wall -Wextra -Werror -std=c++98
 
@@ -20,11 +20,8 @@ SRC = ./main.cpp ./Fixed.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-%.o: %.cpp
-	$(CC) $(CFLAGS) -c $< -o $@
-
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 
