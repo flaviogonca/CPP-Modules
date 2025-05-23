@@ -19,7 +19,7 @@ class Fixed
 {
     private:
         int fixedPointNbr;
-        static const int fractionalBits = 0;
+        static const int fractionalBits = 8;
 
     public:
         Fixed();
