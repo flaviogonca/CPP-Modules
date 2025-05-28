@@ -84,22 +84,28 @@ std::ostream& operator<<(std::ostream& out, const Fixed& fixed)
 
 Fixed Fixed::operator+(const Fixed &obj) const
 {
-    return Fixed(fixedPointNbr + obj.fixedPointNbr);
+    return Fixed(fixedPointNbr + obj.getRawBits());
 }
 
 Fixed Fixed::operator-(const Fixed &obj) const
 {
-    return Fixed(fixedPointNbr - obj.fixedPointNbr);
+    return Fixed(fixedPointNbr - obj.getRawBits());
 }
 
 Fixed Fixed::operator*(const Fixed &obj) const
 {
-    return Fixed(fixedPointNbr * obj.fixedPointNbr);
+    Fixed result;
+    // std::cout << fixedPointNbr << " = " << obj.getRawBits() << std::endl;
+    result.setRawBits((fixedPointNbr * obj.getRawBits()) >> fractionalBits);
+    return result;
 }
 
 Fixed Fixed::operator/(const Fixed &obj) const
 {
-    return Fixed(fixedPointNbr / obj.fixedPointNbr);
+    Fixed result;
+
+    result.setRawBits((fixedPointNbr * obj.getRawBits()) / fractionalBits);
+    return result;
 }
 
 /*Overload Operators (increment/decrement)*/
@@ -133,32 +139,32 @@ Fixed Fixed::operator--( int )
 
 bool Fixed::operator<(const Fixed& obj) const
 {
-    return (fixedPointNbr < obj.fixedPointNbr && fractionalBits < obj.fractionalBits);
+    return (fixedPointNbr < obj.getRawBits() && fractionalBits < obj.fractionalBits);
 }
 
 bool Fixed::operator>(const Fixed& obj) const
 {
-    return (fixedPointNbr > obj.fixedPointNbr && fractionalBits > obj.fractionalBits);
+    return (fixedPointNbr > obj.getRawBits() && fractionalBits > obj.fractionalBits);
 }
 
 bool Fixed::operator<=(const Fixed& obj) const
 {
-    return (fixedPointNbr <= obj.fixedPointNbr && fractionalBits <= obj.fractionalBits);
+    return (fixedPointNbr <= obj.getRawBits() && fractionalBits <= obj.fractionalBits);
 }
 
 bool Fixed::operator>=(const Fixed& obj) const
 {
-    return (fixedPointNbr >= obj.fixedPointNbr && fractionalBits >= obj.fractionalBits);
+    return (fixedPointNbr >= obj.getRawBits() && fractionalBits >= obj.fractionalBits);
 }
 
 bool Fixed::operator==(const Fixed& obj) const
 {
-    return (fixedPointNbr == obj.fixedPointNbr && fractionalBits == obj.fractionalBits);
+    return (fixedPointNbr == obj.getRawBits() && fractionalBits == obj.fractionalBits);
 }
 
 bool Fixed::operator!=(const Fixed& obj) const
 {
-    return (fixedPointNbr != obj.fixedPointNbr && fractionalBits != obj.fractionalBits);
+    return (fixedPointNbr != obj.getRawBits() && fractionalBits != obj.fractionalBits);
 }
 
 /* Public overloaded member functions */
