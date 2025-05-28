@@ -169,8 +169,22 @@ bool Fixed::operator!=(const Fixed& obj) const
 
 /* Public overloaded member functions */
 
-// Fixed& Fixed::min(Fixed &obj1, Fixed &obj2)
-// {
-//     if (obj1.fixedPointNbr = obj2.fixedPointNbr)
-//         return ;
-// }
+Fixed& Fixed::min(Fixed &obj1, Fixed &obj2)
+{
+    return (obj1 < obj2) ? obj1 : obj2;
+}
+
+const Fixed& Fixed::min(const Fixed &obj1, const Fixed &obj2)
+{
+    return (obj1 < obj2) ? obj1 : obj2;
+}
+
+Fixed& Fixed::max(Fixed &obj1, Fixed &obj2)
+{
+    return (obj1 > obj2) ? obj1 : obj2;
+}
+
+const Fixed& Fixed::max(const Fixed &obj1, const Fixed &obj2)
+{
+    return (obj1 > obj2) ? obj1 : obj2;
+}
