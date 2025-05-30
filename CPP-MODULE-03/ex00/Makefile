@@ -5,23 +5,23 @@
 #                                                     +:+ +:+         +:+      #
 #    By: fmalungo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/05/21 17:11:46 by fmalungo          #+#    #+#              #
-#    Updated: 2025/05/21 17:19:54 by fmalungo         ###   ########.fr        #
+#    Created: 2025/05/30 12:01:00 by fmalungo          #+#    #+#              #
+#    Updated: 2025/05/30 12:01:02 by fmalungo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =  a.out
+NAME = Aaaaand...
 
 CXX = c++
 
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror
 
-SRC = ./main.cpp ./Fixed.cpp ./Point.cpp
+SRC = ./main.cpp ./ClapTrap.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
-	$(CXX) $(CFLAGS) $(OBJ) -o $(NAME)
+	$(CXX) $(CXXFLAGS) $(OBJ) -o $(NAME)
 
 all: $(NAME)
 

@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalungo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/21 17:11:30 by fmalungo          #+#    #+#             */
-/*   Updated: 2025/05/21 17:11:31 by fmalungo         ###   ########.fr       */
+/*   Created: 2025/05/30 12:01:42 by fmalungo          #+#    #+#             */
+/*   Updated: 2025/05/30 12:02:21 by fmalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "ClapTrap.hpp"
 
-#include <iostream>
-
-class Fixed
+int main(void)
 {
-    private:
-        int fixedPointNbr;
-        static const int fractionalBits = 8;
-
-    public:
-        Fixed();
-        Fixed(const Fixed& original);
-        Fixed& operator=(const Fixed& original);
-        ~Fixed();
-        int getRawBits( void ) const;
-        void setRawBits( int const raw );
-};
-
-
-#endif
+    return 0;
+}
