@@ -71,6 +71,14 @@ The number `123.45` in floating point might be represented (in simplified form) 
 
 - https://medium.com/@oumaimafisaoui/floating-and-fixed-point-representation-in-c-what-is-going-on-b71af54718a5
 
+## Best helpful ressources:
+
+YouTube. (2016, April 20). Decimal to floating point conversion. YouTube. Retrieved November 8, 2022, from https://www.youtube.com/watch?v=ZrlQpzc61Vc
+
+YouTube. (2020, June 27). IEEE 754 standard for Floating point binary arithmetic. YouTube. Retrieved November 8, 2022, from https://www.youtube.com/watch?v=RuKkePyo9zk&t=451s
+
+YouTube. (2022, June 28). Back to basics! fixed point numbers in C++. YouTube. Retrieved November 8, 2022, from https://www.youtube.com/watch?v=ZMsrZvBmQnU&t=437s
+
 ---
 
 ## 🛠️ How to Run
