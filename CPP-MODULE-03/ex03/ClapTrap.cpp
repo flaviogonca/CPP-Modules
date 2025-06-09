@@ -14,18 +14,18 @@
 
 ClapTrap::ClapTrap(std::string _name)
 {
-    name = _name;
+    this->name = _name;
     hitPoints = 10;
     energyPoints = 10;
-    attackDamage = 5;
-    std::cout << "ClapTrap " << _name << " was created sucessfully" << std::endl;
+    attackDamage = 0;
+    std::cout << "ClapTrap " << this->name  << " was created sucessfully" << std::endl;
 }
 
 ClapTrap::ClapTrap()
 {
     hitPoints = 10;
     energyPoints = 10;
-    attackDamage = 5;
+    attackDamage = 0;
     std::cout << "ClapTrap default constructor" << " was called" << std::endl;
 }
 
@@ -80,6 +80,11 @@ void ClapTrap::beRepaired(unsigned int amount)
     --energyPoints;
     hitPoints += amount;
     std::cout << "ClapTrap " << this->name << " repaired itself and has got +" << amount << " Hit points" << std::endl;
+}
+
+const std::string ClapTrap::getName()
+{
+    return this->name;
 }
 
 void ClapTrap::printStatus()

@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalungo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/30 12:01:42 by fmalungo          #+#    #+#             */
-/*   Updated: 2025/05/30 12:02:21 by fmalungo         ###   ########.fr       */
+/*   Created: 2025/06/03 11:14:15 by fmalungo          #+#    #+#             */
+/*   Updated: 2025/06/03 11:14:17 by fmalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+# define FRAGTRAP_HPP
+
 #include "ClapTrap.hpp"
 
-int main(void)
+class FragTrap : public ClapTrap
 {
-    ClapTrap a("first");
-    ClapTrap b("second");
+    private:
+        /* data */
+    public:
+        FragTrap();
+        ~FragTrap();
+        FragTrap(std::string _name);
+        FragTrap(const FragTrap& original);
+        FragTrap& operator=(const FragTrap& original);
 
-    b.printStatus();
-    a.printStatus();
-    a.beRepaired(5);
-    a.beRepaired(5);
-    a.printStatus();
-    b.attack("first");
-    b.printStatus();
-    
-    a = b;
-    a.printStatus();
-    b.printStatus();
-    return 0;
-}
+        void highFivesGuys(void);
+        void printStatus();
+};
+
+#endif

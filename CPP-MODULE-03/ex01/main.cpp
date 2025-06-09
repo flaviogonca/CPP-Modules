@@ -10,23 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
     ClapTrap a("first");
-    ClapTrap b("second");
+    ScavTrap b("Second");
 
-    b.printStatus();
-    a.printStatus();
-    a.beRepaired(5);
-    a.beRepaired(5);
     a.printStatus();
     b.attack("first");
     b.printStatus();
-    
-    a = b;
-    a.printStatus();
-    b.printStatus();
+    ScavTrap c = b;
+    c.printStatus();
+    c.guardGate();
     return 0;
 }

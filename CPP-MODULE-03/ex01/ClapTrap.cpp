@@ -15,17 +15,17 @@
 ClapTrap::ClapTrap(std::string _name)
 {
     name = _name;
-    hitPoints = 10;
-    energyPoints = 10;
-    attackDamage = 5;
+    hitPoints = 100;
+    energyPoints = 50;
+    attackDamage = 20;
     std::cout << "ClapTrap " << _name << " was created sucessfully" << std::endl;
 }
 
 ClapTrap::ClapTrap()
 {
-    hitPoints = 10;
-    energyPoints = 10;
-    attackDamage = 5;
+    hitPoints = 100;
+    energyPoints = 50;
+    attackDamage = 20;
     std::cout << "ClapTrap default constructor" << " was called" << std::endl;
 }
 
