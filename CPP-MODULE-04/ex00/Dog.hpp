@@ -20,6 +20,8 @@ class Dog : public Animal
     public:
         Dog();
         ~Dog();
+        Dog(const Dog& original);
+        Dog& operator=(const Dog& original);
 
         void makeSound() const;
 };

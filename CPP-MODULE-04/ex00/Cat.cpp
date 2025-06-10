@@ -15,7 +15,7 @@
 Cat::Cat()
 {
     this->type = "Cat";
-    std::cout << this->type + " created successfully" << std::endl;
+    std::cout << "Cat Default Constructor Called" << std::endl;
 }
 
 Cat::~Cat()
@@ -23,7 +23,22 @@ Cat::~Cat()
     std::cout << this->type + " Destroyed" << std::endl;
 }
 
+Cat::Cat(const Cat& original): Animal()
+{
+    this->type = original.type;
+    std::cout << "Cat Copy Constructor Called" << std::endl;
+}
+
+Cat& Cat::operator=(const Cat& original)
+{
+    if (&original != this)
+    {
+        this->type = original.type;
+    }
+    return *this;
+}
+
 void Cat::makeSound() const
 {
-    std::cout << "Miauuu..." << std::endl;
+    std::cout << this->type << ": Miauuu..." << std::endl;
 }

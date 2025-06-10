@@ -15,7 +15,7 @@
 Dog::Dog()
 {
     this->type = "Dog";
-    std::cout << this->type + " created successfully" << std::endl;
+    std::cout << "Dog Default Constructor Called" << std::endl;
 }
 
 Dog::~Dog()
@@ -23,7 +23,22 @@ Dog::~Dog()
     std::cout << this->type + " Destroyed" << std::endl;
 }
 
+Dog::Dog(const Dog& original): Animal()
+{
+    this->type = original.type;
+    std::cout << "Dog Copy Constructor Called" << std::endl;
+}
+
+Dog& Dog::operator=(const Dog& original)
+{
+    if (&original != this)
+    {
+        this->type = original.type;
+    }
+    return *this;
+}
+
 void Dog::makeSound() const
 {
-    std::cout << "WoooWooo..." << std::endl;
+    std::cout << this->type << ": WoooWooo..." << std::endl;
 }

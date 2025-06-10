@@ -22,7 +22,9 @@ class Animal
 
     public:
         Animal();
-        ~Animal();
+        virtual ~Animal();
+        Animal(const Animal& original);
+        Animal& operator=(const Animal& original);
 
         virtual void makeSound() const;
         virtual const std::string& getType() const;
