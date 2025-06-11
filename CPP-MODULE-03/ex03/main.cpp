@@ -25,10 +25,10 @@ int main(void)
     a.printStatus();
     b.printStatus();
     std::cout << "============================================================" << std::endl;
-    // DiamondTrap e;
-    // a = b;
-    // a.printStatus();
-    // a.whoAmI();
+    DiamondTrap e;
+    a = b;
+    a.printStatus();
+    a.whoAmI();
     a.attack("Test");
     std::cout << "============================================================" << std::endl;
     return 0;

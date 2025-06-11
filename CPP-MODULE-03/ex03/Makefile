@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Repetitive
+NAME = Diamond
 
-CXX = c++ -g
+CXX = c++
 
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 

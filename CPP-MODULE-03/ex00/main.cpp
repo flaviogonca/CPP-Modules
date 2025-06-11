@@ -15,6 +15,12 @@
 int main(void)
 {
     ClapTrap a("first");
+
+    a.printStatus();
+    a.attack("The Monster");
+    a.takeDamage(100);
+    a.takeDamage(100);
+    a.printStatus();
     ClapTrap b("second");
 
     b.printStatus();

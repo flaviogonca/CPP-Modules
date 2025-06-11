@@ -17,8 +17,6 @@
 
 class ScavTrap : public ClapTrap
 {
-    private:
-        /* data */
     public:
         ScavTrap();
         ~ScavTrap();

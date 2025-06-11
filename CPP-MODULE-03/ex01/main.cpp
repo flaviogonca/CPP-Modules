@@ -18,6 +18,7 @@ int main(void)
     ScavTrap b("Second");
 
     a.printStatus();
+    a.printStatus();
     b.attack("first");
     b.printStatus();
     ScavTrap c = b;
