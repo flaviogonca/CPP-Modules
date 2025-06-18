@@ -28,20 +28,18 @@ Cat::~Cat()
 Cat::Cat(const Cat& original): Animal()
 {
     this->type = original.type;
+    this->brain = new Brain();
     std::cout << "Cat Copy Constructor Called" << std::endl;
 }
 
 Cat& Cat::operator=(const Cat& original)
 {
-    std::cout <<" HELLO THERE" << std::endl;
     if (&original != this)
     {
-        Brain* newBrain = new Brain();
         delete this->brain;
-        this->brain = newBrain;
+        this->brain = new Brain();
         this->type = original.type;
     }
-    std::cout <<" HELLO THERE" << std::endl;
     return *this;
 }
 

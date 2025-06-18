@@ -1,50 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fmalungo <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/06/09 18:02:24 by fmalungo          #+#    #+#             */
-/*   Updated: 2025/06/09 18:02:26 by fmalungo         ###   ########.fr       */
+/*   Created: 2025/06/10 10:45:37 by fmalungo          #+#    #+#             */
+/*   Updated: 2025/06/10 10:45:39 by fmalungo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "WrongCat.hpp"
 
-Dog::Dog()
+WrongCat::WrongCat()
 {
-    this->type = "Dog";
-    brain = new Brain();
-    std::cout << "🐕 Dog Default Constructor Called" << std::endl;
+    this->type = "WrongCat";
+    std::cout << "WrongCat Default Constructor Called" << std::endl;
 }
 
-Dog::~Dog()
+WrongCat::~WrongCat()
 {
-    delete brain;
     std::cout << this->type + " Destroyed" << std::endl;
 }
 
-Dog::Dog(const Dog& original): Animal()
+WrongCat::WrongCat(const WrongCat& original): WrongAnimal()
 {
     this->type = original.type;
-    brain = new Brain();
-    *brain = *original.brain; 
-    std::cout << "Dog Copy Constructor Called" << std::endl;
+    std::cout << "WrongCat Copy Constructor Called" << std::endl;
 }
 
-Dog& Dog::operator=(const Dog& original)
+WrongCat& WrongCat::operator=(const WrongCat& original)
 {
     if (&original != this)
     {
-        delete this->brain;
-        this->brain = new Brain();
         this->type = original.type;
     }
     return *this;
 }
 
-void Dog::makeSound() const
+void WrongCat::makeSound() const
 {
-    std::cout << this->type << ": WoooWooo..." << std::endl;
+    std::cout << this->type << ": Miauuu..." << std::endl;
 }

@@ -20,7 +20,7 @@ Animal::Animal()
 
 Animal::~Animal()
 {
-    std::cout << "Animal Destryed" << std::endl;
+    std::cout << "Animal Destroyed" << std::endl;
 }
 
 Animal::Animal(const Animal& original)
